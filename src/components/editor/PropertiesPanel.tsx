@@ -201,7 +201,7 @@ export default function PropertiesPanel() {
                   <button
                     key={color}
                     onClick={() => {
-                      let newHtml = html.replace(new RegExp(customColors.primary.replace('#', '\\#'), 'g'), color);
+                      const newHtml = html.replace(new RegExp(customColors.primary.replace('#', '\\#'), 'g'), color);
                       setCustomColors(c => ({ ...c, primary: color }));
                       setHtml(newHtml);
                     }}
@@ -223,7 +223,7 @@ export default function PropertiesPanel() {
                   value={customColors.primary}
                   onChange={(e) => {
                     const color = e.target.value;
-                    let newHtml = html.replace(new RegExp(customColors.primary.replace('#', '\\#'), 'g'), color);
+                    const newHtml = html.replace(new RegExp(customColors.primary.replace('#', '\\#'), 'g'), color);
                     setCustomColors(c => ({ ...c, primary: color }));
                     setHtml(newHtml);
                   }}
@@ -239,7 +239,7 @@ export default function PropertiesPanel() {
                 value={customColors.bg}
                 onChange={(e) => {
                   const color = e.target.value;
-                  let newHtml = html.replace(new RegExp(customColors.bg.replace('#', '\\#'), 'g'), color);
+                  const newHtml = html.replace(new RegExp(customColors.bg.replace('#', '\\#'), 'g'), color);
                   setCustomColors(c => ({ ...c, bg: color }));
                   setHtml(newHtml);
                 }}

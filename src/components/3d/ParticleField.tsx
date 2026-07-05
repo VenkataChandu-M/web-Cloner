@@ -6,25 +6,30 @@ import * as THREE from 'three';
 
 function Particles({ count = 2000 }: { count?: number }) {
   const meshRef = useRef<THREE.Points>(null);
-  const mouseRef = useRef({ x: 0, y: 0 });
 
   const [positions, colors] = useMemo(() => {
     const positions = new Float32Array(count * 3);
     const colors = new Float32Array(count * 3);
 
+    let seed = 1;
+    const random = () => {
+      const x = Math.sin(seed++) * 10000;
+      return x - Math.floor(x);
+    };
+
     for (let i = 0; i < count; i++) {
       const i3 = i * 3;
       // Spread particles in a sphere
-      const radius = Math.random() * 8 + 2;
-      const theta = Math.random() * Math.PI * 2;
-      const phi = Math.acos(Math.random() * 2 - 1);
+      const radius = random() * 8 + 2;
+      const theta = random() * Math.PI * 2;
+      const phi = Math.acos(random() * 2 - 1);
 
       positions[i3] = radius * Math.sin(phi) * Math.cos(theta);
       positions[i3 + 1] = radius * Math.sin(phi) * Math.sin(theta);
       positions[i3 + 2] = radius * Math.cos(phi);
 
       // Colors: purple to cyan gradient
-      const t = Math.random();
+      const t = random();
       colors[i3] = 0.55 + t * 0.0 - 0.53; // R: purple->cyan
       colors[i3 + 1] = 0.36 + t * 0.35;      // G
       colors[i3 + 2] = 0.96 - t * 0.13;       // B

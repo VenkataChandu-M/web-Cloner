@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
+import Link from 'next/link';
 
 interface NavbarProps {
   transparent?: boolean;
@@ -8,7 +9,6 @@ interface NavbarProps {
 
 export default function Navbar({ transparent = false }: NavbarProps) {
   const [scrolled, setScrolled] = useState(false);
-  const [mobileOpen, setMobileOpen] = useState(false);
   const navRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
@@ -62,9 +62,9 @@ export default function Navbar({ transparent = false }: NavbarProps) {
 
   return (
     <nav ref={navRef} style={navStyle}>
-      <a href="/" style={logoStyle}>
+      <Link href="/" style={logoStyle}>
         ⚡ WebForge AI
-      </a>
+      </Link>
 
       {/* Desktop Nav */}
       <div style={{
@@ -72,7 +72,7 @@ export default function Navbar({ transparent = false }: NavbarProps) {
         alignItems: 'center',
         gap: '4px',
       }}>
-        <a href="/dashboard" style={linkStyle}
+        <Link href="/dashboard" style={linkStyle}
           onMouseEnter={(e) => {
             e.currentTarget.style.color = 'var(--text-primary)';
             e.currentTarget.style.background = 'rgba(255,255,255,0.05)';
@@ -83,8 +83,8 @@ export default function Navbar({ transparent = false }: NavbarProps) {
           }}
         >
           Dashboard
-        </a>
-        <a href="/generate" style={linkStyle}
+        </Link>
+        <Link href="/generate" style={linkStyle}
           onMouseEnter={(e) => {
             e.currentTarget.style.color = 'var(--text-primary)';
             e.currentTarget.style.background = 'rgba(255,255,255,0.05)';
@@ -95,8 +95,8 @@ export default function Navbar({ transparent = false }: NavbarProps) {
           }}
         >
           Create
-        </a>
-        <a href="/clone" style={linkStyle}
+        </Link>
+        <Link href="/clone" style={linkStyle}
           onMouseEnter={(e) => {
             e.currentTarget.style.color = 'var(--text-primary)';
             e.currentTarget.style.background = 'rgba(255,255,255,0.05)';
@@ -107,13 +107,13 @@ export default function Navbar({ transparent = false }: NavbarProps) {
           }}
         >
           Clone
-        </a>
+        </Link>
       </div>
 
       <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-        <a href="/generate" className="glow-btn" style={{ padding: '10px 24px', fontSize: '14px' }}>
+        <Link href="/generate" className="glow-btn" style={{ padding: '10px 24px', fontSize: '14px', textDecoration: 'none' }}>
           Start Building
-        </a>
+        </Link>
       </div>
     </nav>
   );

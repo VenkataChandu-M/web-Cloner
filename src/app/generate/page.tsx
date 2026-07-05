@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import Navbar from '@/components/ui/Navbar';
 import LoadingSpinner from '@/components/ui/LoadingSpinner';
@@ -39,6 +39,27 @@ const examplePrompts = [
   'E-commerce product page for premium headphones with bold typography',
 ];
 
+function createProjectObject(
+  name: string,
+  description: string,
+  html: string,
+  source: 'ai' | 'template'
+) {
+  const projectId = 'proj-' + Date.now();
+  return {
+    id: projectId,
+    name: name || 'Untitled Project',
+    description: description,
+    html: html,
+    css: '',
+    js: '',
+    thumbnail: '',
+    createdAt: new Date().toISOString(),
+    updatedAt: new Date().toISOString(),
+    source: source,
+  };
+}
+
 export default function GeneratePage() {
   const router = useRouter();
   const addProject = useProjectStore((s) => s.addProject);
@@ -54,12 +75,17 @@ export default function GeneratePage() {
   const [quotaError, setQuotaError] = useState(false);
 
   // Check URL param for templates tab
-  if (typeof window !== 'undefined') {
-    const params = new URLSearchParams(window.location.search);
-    if (params.get('tab') === 'templates' && activeTab !== 'templates') {
-      setActiveTab('templates');
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const params = new URLSearchParams(window.location.search);
+      if (params.get('tab') === 'templates') {
+        const timer = setTimeout(() => {
+          setActiveTab('templates');
+        }, 0);
+        return () => clearTimeout(timer);
+      }
     }
-  }
+  }, []);
 
   const toggleSection = (id: string) => {
     setSelectedSections((prev) =>
@@ -74,7 +100,9 @@ export default function GeneratePage() {
     // Simulate generation delay
     setTimeout(() => {
       let mockHtml = templates[0].html; // default SaaS Pro
-      if (selectedStyle === 'minimal' || selectedStyle === '3d') {
+      if (selectedStyle === '3d' || selectedStyle === 'glassmorphism') {
+        mockHtml = templates.find(t => t.id === 'portfolio-3d-glass')?.html || templates[1].html;
+      } else if (selectedStyle === 'minimal') {
         mockHtml = templates[1].html; // Creative Portfolio
       } else if (selectedStyle === 'futuristic') {
         mockHtml = templates[2].html; // StartupPro
@@ -127,7 +155,9 @@ export default function GeneratePage() {
       const isQuota = errMsg.toLowerCase().includes('quota') || 
                       errMsg.toLowerCase().includes('rate limit') || 
                       errMsg.toLowerCase().includes('too many requests') || 
-                      errMsg.toLowerCase().includes('429');
+                      errMsg.toLowerCase().includes('429') ||
+                      errMsg.toLowerCase().includes('api key') ||
+                      errMsg.toLowerCase().includes('not configured');
       
       if (isQuota) {
         setQuotaError(true);
@@ -145,39 +175,16 @@ export default function GeneratePage() {
   };
 
   const handleSaveAndEdit = () => {
-    const projectId = `proj-${Date.now()}`;
-    const project = {
-      id: projectId,
-      name: description.slice(0, 50) || 'Untitled Project',
-      description: description,
-      html: generatedHtml,
-      css: '',
-      js: '',
-      thumbnail: '',
-      createdAt: new Date().toISOString(),
-      updatedAt: new Date().toISOString(),
-      source: 'ai' as const,
-    };
+    const name = description.slice(0, 50) || 'Untitled Project';
+    const project = createProjectObject(name, description, generatedHtml, 'ai');
     addProject(project);
-    router.push(`/editor/${projectId}`);
+    router.push(`/editor/${project.id}`);
   };
 
   const handleTemplateSelect = (template: typeof templates[0]) => {
-    const projectId = `proj-${Date.now()}`;
-    const project = {
-      id: projectId,
-      name: template.name,
-      description: template.description,
-      html: template.html,
-      css: '',
-      js: '',
-      thumbnail: '',
-      createdAt: new Date().toISOString(),
-      updatedAt: new Date().toISOString(),
-      source: 'template' as const,
-    };
+    const project = createProjectObject(template.name, template.description, template.html, 'template');
     addProject(project);
-    router.push(`/editor/${projectId}`);
+    router.push(`/editor/${project.id}`);
   };
 
   const stepLabels = ['Describe', 'Style', 'Sections', 'Generate', 'Preview'];
@@ -482,7 +489,7 @@ export default function GeneratePage() {
                       lineHeight: 1.6,
                       textAlign: 'left'
                     }}>
-                      <span style={{ fontWeight: 700, color: '#ef4444' }}>⚠️ Quota Limit / Rate-Limit Detected:</span> Your Gemini API key is currently out of tokens or rate-limited.
+                      <span style={{ fontWeight: 700, color: '#ef4444' }}>⚠️ API Credentials Missing or Exceeded:</span> Your Gemini API key is either not configured, out of tokens, or rate-limited. You can run in Sandbox Mode to load the premium 3D Liquid Glass Portfolio demo website.
                       <div style={{ marginTop: '12px', display: 'flex', gap: '10px' }}>
                         <button
                           className="glow-btn"
