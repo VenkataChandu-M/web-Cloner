@@ -39,10 +39,10 @@ const sectionOptions = [
 ];
 
 const examplePrompts = [
-  'A modern SaaS landing page for a project management tool with dark theme',
-  'Portfolio website for a creative photographer with image gallery',
-  'Landing page for an AI startup with 3D particle effects and glassmorphism',
-  'E-commerce product page for premium headphones with bold typography',
+  'A modern Italian restaurant website with online menu, table reservations, and customer FAQ chatbot',
+  'A local salon & spa website with service pricing, before/after gallery, and WhatsApp booking',
+  'A digital marketing agency site with case studies, ROI calculator, and lead capture form',
+  'An e-commerce store for artisanal coffee with subscription boxes and customer reviews',
 ];
 
 function createProjectObject(
@@ -210,6 +210,40 @@ export default function GeneratePage() {
         margin: '0 auto',
         padding: '104px 24px 60px',
       }}>
+        {/* Onboarding Wizard Banner */}
+        <div style={{
+          padding: '16px 20px',
+          background: 'linear-gradient(135deg, rgba(139, 92, 246, 0.15), rgba(6, 182, 212, 0.1))',
+          border: '1px solid rgba(139, 92, 246, 0.3)',
+          borderRadius: '16px',
+          marginBottom: '32px',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+          flexWrap: 'wrap',
+          gap: '12px',
+          animation: 'fade-in-up 0.4s ease-out',
+        }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+            <span style={{ fontSize: '1.8rem' }}>🚀</span>
+            <div>
+              <div style={{ fontSize: '15px', fontWeight: 700, color: 'var(--text-primary)' }}>
+                Want a Complete AI Business Platform?
+              </div>
+              <div style={{ fontSize: '13px', color: 'var(--text-secondary)' }}>
+                Deploy website, SEO, chatbot, and marketing tools in our interactive 3-step wizard.
+              </div>
+            </div>
+          </div>
+          <a
+            href="/onboarding"
+            className="glow-btn"
+            style={{ padding: '10px 20px', fontSize: '13px', textDecoration: 'none', whiteSpace: 'nowrap' }}
+          >
+            Try Onboarding Wizard →
+          </a>
+        </div>
+
         {/* Tab Switcher */}
         <div style={{
           display: 'flex',
@@ -259,46 +293,69 @@ export default function GeneratePage() {
               gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))',
               gap: '16px',
             }}>
-              {templates.map((template) => (
-                <button
-                  key={template.id}
-                  onClick={() => handleTemplateSelect(template)}
-                  style={{
-                    padding: '24px',
-                    background: 'var(--glass-bg)',
-                    border: '1px solid var(--glass-border)',
-                    borderRadius: '16px',
-                    textAlign: 'left',
-                    cursor: 'pointer',
-                    color: 'inherit',
-                    transition: 'all 0.3s',
-                  }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.borderColor = 'rgba(139, 92, 246, 0.3)';
-                    e.currentTarget.style.transform = 'translateY(-4px)';
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.borderColor = 'var(--glass-border)';
-                    e.currentTarget.style.transform = 'translateY(0)';
-                  }}
-                >
-                  <div style={{ fontSize: '2.5rem', marginBottom: '12px' }}>
-                    {template.thumbnail}
-                  </div>
-                  <h3 style={{ fontSize: '1.1rem', fontWeight: 700, marginBottom: '8px' }}>
-                    {template.name}
-                  </h3>
-                  <p style={{
-                    color: 'var(--text-secondary)',
-                    fontSize: '0.9rem',
-                    lineHeight: 1.6,
-                    marginBottom: '12px',
-                  }}>
-                    {template.description}
-                  </p>
-                  <span className="chip">{template.category}</span>
-                </button>
-              ))}
+              {templates.map((template) => {
+                const isSuite = template.id === 'ai-business-suite';
+                return (
+                  <button
+                    key={template.id}
+                    onClick={() => handleTemplateSelect(template)}
+                    style={{
+                      padding: '24px',
+                      background: isSuite ? 'linear-gradient(135deg, rgba(139, 92, 246, 0.12), rgba(6, 182, 212, 0.05))' : 'var(--glass-bg)',
+                      border: '1px solid',
+                      borderColor: isSuite ? 'rgba(139, 92, 246, 0.5)' : 'var(--glass-border)',
+                      borderRadius: '16px',
+                      textAlign: 'left',
+                      cursor: 'pointer',
+                      color: 'inherit',
+                      transition: 'all 0.3s',
+                      position: 'relative',
+                      boxShadow: isSuite ? '0 0 30px rgba(139, 92, 246, 0.15)' : 'none',
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.borderColor = 'rgba(139, 92, 246, 0.5)';
+                      e.currentTarget.style.transform = 'translateY(-4px)';
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.borderColor = isSuite ? 'rgba(139, 92, 246, 0.5)' : 'var(--glass-border)';
+                      e.currentTarget.style.transform = 'translateY(0)';
+                    }}
+                  >
+                    {isSuite && (
+                      <div style={{
+                        position: 'absolute',
+                        top: '-12px',
+                        right: '16px',
+                        background: 'linear-gradient(135deg, #8b5cf6, #ec4899)',
+                        color: 'white',
+                        fontSize: '11px',
+                        fontWeight: 700,
+                        padding: '4px 12px',
+                        borderRadius: '999px',
+                        boxShadow: '0 4px 12px rgba(236, 72, 153, 0.4)',
+                        letterSpacing: '0.05em',
+                      }}>
+                        🔥 RECOMMENDED FOR HACKATHON
+                      </div>
+                    )}
+                    <div style={{ fontSize: '2.5rem', marginBottom: '12px' }}>
+                      {template.thumbnail}
+                    </div>
+                    <h3 style={{ fontSize: '1.1rem', fontWeight: 700, marginBottom: '8px' }}>
+                      {template.name}
+                    </h3>
+                    <p style={{
+                      color: 'var(--text-secondary)',
+                      fontSize: '0.9rem',
+                      lineHeight: 1.6,
+                      marginBottom: '12px',
+                    }}>
+                      {template.description}
+                    </p>
+                    <span className="chip">{template.category}</span>
+                  </button>
+                );
+              })}
             </div>
           </div>
         )}
