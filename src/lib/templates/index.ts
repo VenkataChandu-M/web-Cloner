@@ -1138,8 +1138,1889 @@ nav .links a:hover{color:#f0f0ff}
 </body>
 </html>`,
   },
-];
 
+  {
+    id: 'ai-business-suite',
+    name: 'AI Enterprise Suite',
+    description: 'Unified Business Hub featuring interactive Customer Portal, Analytics, Workflows, Recommendations, Chatbot support, and Management controls.',
+    thumbnail: '🏢',
+    category: 'Business',
+    html: `<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>CognitiveFlow AI Enterprise Suite</title>
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<!-- FontAwesome Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+  :root {
+    --bg-dark: #050512;
+    --bg-card: rgba(18, 18, 38, 0.4);
+    --text-light: #f3f4f6;
+    --text-muted: #8b8ba8;
+    --purple: #8b5cf6;
+    --pink: #d946ef;
+    --cyan: #06b6d4;
+    --green: #10b981;
+    --orange: #f59e0b;
+    --glass-bg: rgba(255, 255, 255, 0.02);
+    --glass-border: rgba(255, 255, 255, 0.08);
+    --glass-glow: rgba(139, 92, 246, 0.1);
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    overflow-x: hidden;
+    min-height: 100vh;
+    background-image: 
+      radial-gradient(circle at 10% 20%, rgba(139, 92, 246, 0.08) 0%, transparent 40%),
+      radial-gradient(circle at 90% 80%, rgba(6, 182, 212, 0.06) 0%, transparent 40%);
+  }
+
+  /* Sticky Navbar */
+  header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--glass-border);
+    background: rgba(5, 5, 18, 0.7);
+  }
+
+  .navbar {
+    max-width: 1300px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 24px;
+  }
+
+  .logo {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    text-decoration: none;
+    background: linear-gradient(135deg, var(--purple), var(--cyan));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 28px;
+    list-style: none;
+  }
+
+  .nav-links a {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
+
+  .nav-links a:hover, .nav-links a.active {
+    color: var(--text-light);
+  }
+
+  .nav-cta {
+    padding: 10px 24px;
+    background: linear-gradient(135deg, rgba(139, 92, 246, 0.2), rgba(6, 182, 212, 0.2));
+    border: 1px solid var(--glass-border);
+    color: var(--text-light);
+    border-radius: 99px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+
+  .nav-cta:hover {
+    border-color: var(--purple);
+    box-shadow: 0 0 20px rgba(139, 92, 246, 0.3);
+    transform: translateY(-1px);
+  }
+
+  /* Utility Styles */
+  .section-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 100px 24px;
+  }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 60px;
+  }
+
+  .section-header h2 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 16px;
+    letter-spacing: -0.02em;
+    background: linear-gradient(135deg, #fff, #c084fc);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .section-header p {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .glass-card {
+    background: var(--bg-card);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 20px;
+    padding: 32px;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+  }
+
+  /* Hero Section */
+  .hero {
+    padding-top: 180px;
+    padding-bottom: 80px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero h1 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    font-weight: 700;
+    line-height: 1.15;
+    margin-bottom: 24px;
+    letter-spacing: -0.03em;
+    background: linear-gradient(135deg, #fff 30%, #c084fc 70%, #06b6d4 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .hero p {
+    color: var(--text-muted);
+    font-size: 1.25rem;
+    max-width: 700px;
+    margin: 0 auto 40px;
+    line-height: 1.6;
+  }
+
+  .hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+  }
+
+  .btn {
+    padding: 14px 32px;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 12px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .btn-primary {
+    background: linear-gradient(135deg, var(--purple), var(--cyan));
+    color: white;
+    border: none;
+    box-shadow: 0 10px 25px -5px rgba(139, 92, 246, 0.4);
+  }
+
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 15px 30px -5px rgba(139, 92, 246, 0.6);
+  }
+
+  .btn-secondary {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--glass-border);
+    color: var(--text-light);
+  }
+
+  .btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.08);
+    transform: translateY(-2px);
+  }
+
+  /* Feature 1: Analytics Dashboard */
+  .analytics-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-bottom: 24px;
+  }
+
+  .kpi-card {
+    padding: 24px;
+    text-align: left;
+  }
+
+  .kpi-title {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 12px;
+  }
+
+  .kpi-value {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+
+  .kpi-trend {
+    font-size: 0.8rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 4px 8px;
+    border-radius: 99px;
+    font-weight: 600;
+  }
+
+  .trend-up {
+    background: rgba(16, 185, 129, 0.1);
+    color: var(--green);
+  }
+
+  .analytics-charts {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 24px;
+  }
+
+  .chart-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+  }
+
+  .chart-header h3 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.2rem;
+  }
+
+  .chart-selector {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid var(--glass-border);
+    color: var(--text-light);
+    padding: 6px 12px;
+    border-radius: 8px;
+    outline: none;
+    font-size: 0.85rem;
+    cursor: pointer;
+  }
+
+  /* Feature 2: Product Recommendations */
+  .rec-controls {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 32px;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .persona-tabs {
+    display: flex;
+    gap: 8px;
+    background: rgba(0,0,0,0.2);
+    padding: 4px;
+    border-radius: 10px;
+    border: 1px solid var(--glass-border);
+  }
+
+  .persona-tab {
+    padding: 8px 16px;
+    border: none;
+    background: transparent;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: all 0.2s;
+  }
+
+  .persona-tab.active {
+    background: var(--purple);
+    color: white;
+  }
+
+  .search-input-group {
+    display: flex;
+    flex: 1;
+    gap: 8px;
+    min-width: 280px;
+  }
+
+  .input-text {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--glass-border);
+    border-radius: 10px;
+    padding: 10px 16px;
+    color: white;
+    outline: none;
+    font-size: 0.9rem;
+    transition: border-color 0.2s;
+  }
+
+  .input-text:focus {
+    border-color: var(--cyan);
+  }
+
+  .rec-showcase {
+    position: relative;
+    min-height: 280px;
+  }
+
+  .rec-scan-line {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, transparent, var(--cyan), transparent);
+    z-index: 10;
+    opacity: 0;
+    box-shadow: 0 0 12px var(--cyan);
+  }
+
+  .rec-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    transition: opacity 0.3s;
+  }
+
+  .rec-card {
+    background: rgba(255,255,255,0.01);
+    border: 1px solid var(--glass-border);
+    border-radius: 16px;
+    padding: 24px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .match-badge {
+    align-self: flex-start;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--green);
+    background: rgba(16, 185, 129, 0.1);
+    padding: 4px 10px;
+    border-radius: 99px;
+    margin-bottom: 16px;
+    border: 1px solid rgba(16,185,129,0.2);
+  }
+
+  /* Feature 3: Business Management */
+  .management-panel {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 24px;
+  }
+
+  .table-container {
+    overflow-x: auto;
+  }
+
+  .custom-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+  }
+
+  .custom-table th {
+    padding: 16px;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    color: var(--text-muted);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 16px;
+  }
+
+  .custom-table td {
+    padding: 16px;
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+    font-size: 0.9rem;
+  }
+
+  .status-dot {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    margin-right: 6px;
+  }
+
+  .status-active { background-color: var(--green); }
+  .status-low { background-color: var(--orange); }
+
+  .log-panel {
+    background: rgba(0,0,0,0.2);
+    border: 1px solid var(--glass-border);
+    border-radius: 16px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    max-height: 380px;
+  }
+
+  .log-feed {
+    flex: 1;
+    overflow-y: auto;
+    font-family: monospace;
+    font-size: 0.8rem;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    text-align: left;
+  }
+
+  .log-item {
+    color: #a0a0c0;
+    line-height: 1.4;
+  }
+
+  .log-time {
+    color: var(--cyan);
+  }
+
+  /* Modal Form styling */
+  .modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(5,5,15,0.85);
+    backdrop-filter: blur(8px);
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s;
+  }
+
+  .modal-overlay.open {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .modal-box {
+    max-width: 450px;
+    width: 90%;
+    padding: 36px;
+    border: 1px solid rgba(255,255,255,0.15);
+    background: #090916;
+  }
+
+  .form-group {
+    margin-bottom: 20px;
+    text-align: left;
+  }
+
+  .form-group label {
+    display: block;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    font-weight: 600;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+  }
+
+  /* Feature 4: Workflows Builder */
+  .workflow-canvas {
+    position: relative;
+    background: radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+    background-size: 20px 20px;
+    border: 1px solid var(--glass-border);
+    border-radius: 16px;
+    padding: 48px;
+    min-height: 380px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 32px;
+    overflow: hidden;
+  }
+
+  .node-card {
+    width: 200px;
+    background: rgba(9, 9, 24, 0.8);
+    border: 1px solid var(--glass-border);
+    border-radius: 12px;
+    padding: 16px;
+    position: relative;
+    z-index: 2;
+    transition: all 0.3s ease;
+    text-align: center;
+  }
+
+  .node-card.active-node {
+    border-color: var(--purple);
+    box-shadow: 0 0 20px rgba(139,92,246,0.3);
+  }
+
+  .node-card.success-node {
+    border-color: var(--green);
+    box-shadow: 0 0 20px rgba(16,185,129,0.3);
+  }
+
+  .node-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 12px;
+    font-size: 1.2rem;
+  }
+
+  .node-header {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+
+  .node-body {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+  }
+
+  .workflow-connections {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  .workflow-pulse-dot {
+    offset-path: path("M 150 190 L 450 190 L 750 190 L 1050 190");
+    width: 10px;
+    height: 10px;
+    background: var(--pink);
+    border-radius: 50%;
+    position: absolute;
+    box-shadow: 0 0 12px var(--pink);
+    opacity: 0;
+  }
+
+  /* Feature 5: Customer Portal */
+  .portal-container {
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    gap: 32px;
+  }
+
+  .portal-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    text-align: left;
+  }
+
+  .portal-menu-btn {
+    padding: 12px 18px;
+    background: transparent;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    color: var(--text-muted);
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    text-align: left;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .portal-menu-btn:hover {
+    color: var(--text-light);
+    background: rgba(255,255,255,0.02);
+  }
+
+  .portal-menu-btn.active {
+    color: var(--purple);
+    background: rgba(139, 92, 246, 0.08);
+    border-color: rgba(139, 92, 246, 0.15);
+  }
+
+  .portal-content-pane {
+    display: none;
+    text-align: left;
+  }
+
+  .portal-content-pane.active {
+    display: block;
+    animation: fade-in 0.3s ease-out;
+  }
+
+  /* Stepper timeline */
+  .stepper {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    margin-bottom: 40px;
+    padding: 0 20px;
+  }
+
+  .stepper::before {
+    content: '';
+    position: absolute;
+    top: 20px;
+    left: 40px;
+    right: 40px;
+    height: 2px;
+    background: rgba(255,255,255,0.06);
+    z-index: 1;
+  }
+
+  .stepper-progress {
+    position: absolute;
+    top: 20px;
+    left: 40px;
+    width: 0%;
+    height: 2px;
+    background: var(--green);
+    z-index: 2;
+    transition: width 0.4s ease;
+    box-shadow: 0 0 10px var(--green);
+  }
+
+  .step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 3;
+  }
+
+  .step-circle {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #0f0f20;
+    border: 2px solid rgba(255,255,255,0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--text-muted);
+    transition: all 0.3s;
+  }
+
+  .step.active .step-circle {
+    border-color: var(--cyan);
+    color: var(--cyan);
+    box-shadow: 0 0 15px rgba(6, 182, 212, 0.4);
+  }
+
+  .step.completed .step-circle {
+    border-color: var(--green);
+    background: var(--green);
+    color: white;
+    box-shadow: 0 0 15px rgba(16, 185, 129, 0.4);
+  }
+
+  .step-label {
+    margin-top: 12px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--text-muted);
+  }
+
+  .step.active .step-label {
+    color: var(--text-light);
+  }
+
+  /* API Key blur */
+  .api-key-box {
+    display: flex;
+    align-items: center;
+    background: rgba(0,0,0,0.3);
+    border: 1px solid var(--glass-border);
+    padding: 12px 18px;
+    border-radius: 10px;
+    font-family: monospace;
+    font-size: 0.95rem;
+    gap: 16px;
+    justify-content: space-between;
+    margin-top: 12px;
+  }
+
+  .api-key-text {
+    filter: blur(5px);
+    transition: filter 0.2s;
+  }
+
+  .api-key-text.revealed {
+    filter: blur(0);
+  }
+
+  .btn-icon {
+    background: transparent;
+    border: none;
+    color: var(--text-muted);
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: color 0.2s;
+  }
+
+  .btn-icon:hover {
+    color: var(--text-light);
+  }
+
+  /* Feature 6: Support Widget */
+  .support-widget {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 9999;
+  }
+
+  .support-trigger {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--purple), var(--cyan));
+    border: none;
+    color: white;
+    font-size: 1.6rem;
+    cursor: pointer;
+    box-shadow: 0 10px 25px rgba(139, 92, 246, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    transition: transform 0.3s;
+  }
+
+  .support-trigger:hover {
+    transform: scale(1.08);
+  }
+
+  .support-status {
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    width: 14px;
+    height: 14px;
+    background: var(--green);
+    border: 2px solid var(--bg-dark);
+    border-radius: 50%;
+  }
+
+  .support-chat-box {
+    position: absolute;
+    bottom: 76px;
+    right: 0;
+    width: 360px;
+    height: 480px;
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 20px;
+    box-shadow: 0 12px 40px rgba(0,0,0,0.6);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+    pointer-events: none;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .support-chat-box.open {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    pointer-events: auto;
+  }
+
+  .chat-header {
+    background: rgba(18, 18, 38, 0.8);
+    border-bottom: 1px solid var(--glass-border);
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .chat-avatar {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--purple), var(--cyan));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    font-weight: 700;
+  }
+
+  .chat-title {
+    text-align: left;
+  }
+
+  .chat-title h4 {
+    font-size: 0.9rem;
+    font-weight: 700;
+  }
+
+  .chat-title span {
+    font-size: 0.75rem;
+    color: var(--green);
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  .chat-messages {
+    flex: 1;
+    padding: 16px;
+    overflow-y: auto;
+    background: rgba(10, 10, 26, 0.6);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .message {
+    max-width: 80%;
+    padding: 10px 14px;
+    border-radius: 12px;
+    font-size: 0.85rem;
+    line-height: 1.4;
+    text-align: left;
+  }
+
+  .message-bot {
+    align-self: flex-start;
+    background: rgba(255, 255, 255, 0.04);
+    color: var(--text-light);
+    border: 1px solid var(--glass-border);
+    border-top-left-radius: 2px;
+  }
+
+  .message-user {
+    align-self: flex-end;
+    background: var(--purple);
+    color: white;
+    border-top-right-radius: 2px;
+  }
+
+  .chat-typing-dots {
+    display: inline-flex;
+    gap: 4px;
+    align-items: center;
+    padding: 10px 14px;
+  }
+
+  .chat-quick-replies {
+    padding: 8px 12px;
+    display: flex;
+    gap: 8px;
+    overflow-x: auto;
+    background: rgba(10, 10, 26, 0.6);
+    border-top: 1px solid rgba(255,255,255,0.03);
+  }
+
+  .chat-reply-chip {
+    padding: 6px 12px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--glass-border);
+    border-radius: 99px;
+    color: var(--text-muted);
+    font-size: 0.75rem;
+    font-weight: 500;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all 0.2s;
+  }
+
+  .chat-reply-chip:hover {
+    border-color: var(--cyan);
+    color: var(--text-light);
+  }
+
+  .chat-input-group {
+    background: rgba(18, 18, 38, 0.8);
+    border-top: 1px solid var(--glass-border);
+    padding: 12px;
+    display: flex;
+    gap: 8px;
+  }
+
+  /* Animations */
+  @keyframes typing {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-4px); }
+  }
+
+  @keyframes fade-in {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+</style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="navbar">
+      <a href="#" class="logo">
+        <i class="fa-solid fa-brain"></i> CognitiveFlow AI
+      </a>
+      <ul class="nav-links">
+        <li><a href="#analytics" class="nav-item">Analytics</a></li>
+        <li><a href="#recommendations" class="nav-item">Recommendations</a></li>
+        <li><a href="#management" class="nav-item">Dashboard</a></li>
+        <li><a href="#workflows" class="nav-item">Workflows</a></li>
+        <li><a href="#portal" class="nav-item">Customer Portal</a></li>
+      </ul>
+      <a href="#portal" class="nav-cta">Client Hub</a>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="section-container">
+      <span class="btn-secondary" style="display:inline-flex; padding: 6px 14px; border-radius: 99px; font-size: 0.8rem; margin-bottom: 24px; pointer-events: none;">
+        ⚡ Enterprise Intelligence Dashboard
+      </span>
+      <h1>Autonomous Operations & <br><span style="background: linear-gradient(135deg, var(--cyan), var(--purple), var(--pink)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">AI-Driven Automation</span></h1>
+      <p>Synchronize workflows, recommendations, customer experiences, and live business processes from a single dashboard. Leverage real-time telemetry pipelines to optimize operations.</p>
+      <div class="hero-buttons">
+        <a href="#analytics" class="btn btn-primary">Open Analytics</a>
+        <a href="#workflows" class="btn btn-secondary">Configure Workflows</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 1: Analytics Dashboard -->
+  <section id="analytics" class="section-container">
+    <div class="section-header">
+      <h2>Business Analytics Dashboard</h2>
+      <p>Real-time analytics pipelines displaying conversion, engagement rates, and live operational stats.</p>
+    </div>
+
+    <div class="analytics-grid">
+      <div class="glass-card kpi-card">
+        <div class="kpi-title">Monthly Revenue</div>
+        <div class="kpi-value" id="kpi-rev">$128,492</div>
+        <span class="kpi-trend trend-up"><i class="fa-solid fa-arrow-trend-up"></i> +12.4%</span>
+      </div>
+      <div class="glass-card kpi-card">
+        <div class="kpi-title">Active Customers</div>
+        <div class="kpi-value" id="kpi-users">4,892</div>
+        <span class="kpi-trend trend-up"><i class="fa-solid fa-arrow-trend-up"></i> +4.8%</span>
+      </div>
+      <div class="glass-card kpi-card">
+        <div class="kpi-title">Conversion Rate</div>
+        <div class="kpi-value" id="kpi-conv">3.2%</div>
+        <span class="kpi-trend trend-up"><i class="fa-solid fa-arrow-trend-up"></i> +1.1%</span>
+      </div>
+    </div>
+
+    <div class="glass-card" style="margin-bottom: 24px;">
+      <div class="chart-header">
+        <h3>Visitor Traffic vs Conversions</h3>
+        <div>
+          <button class="btn btn-primary" onclick="simulateNewSale()" style="padding: 6px 14px; font-size: 0.8rem; border-radius: 6px; margin-right: 12px;">
+            <i class="fa-solid fa-circle-plus"></i> Simulate Order
+          </button>
+          <select class="chart-selector" id="timeframe" onchange="updateChart()">
+            <option value="24h">Last 24 Hours</option>
+            <option value="7d">Last 7 Days</option>
+            <option value="30d">Last 30 Days</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="analytics-charts">
+        <!-- SVG Line Chart -->
+        <div style="height: 260px; position: relative;">
+          <svg id="svg-line-chart" viewBox="0 0 600 240" style="width: 100%; height: 100%; overflow: visible;">
+            <defs>
+              <linearGradient id="chart-grad" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="var(--purple)" stop-opacity="0.3"></stop>
+                <stop offset="100%" stop-color="var(--purple)" stop-opacity="0"></stop>
+              </linearGradient>
+            </defs>
+            <path id="chart-line-path" d="M 0,200 Q 100,120 200,150 T 400,80 T 600,120 L 600,240 L 0,240 Z" fill="url(#chart-grad)"></path>
+            <path id="chart-stroke-path" d="M 0,200 Q 100,120 200,150 T 400,80 T 600,120" fill="none" stroke="var(--purple)" stroke-width="3" stroke-linecap="round"></path>
+          </svg>
+        </div>
+        
+        <!-- SVG Bar Chart -->
+        <div style="height: 260px; display: flex; align-items: flex-end; justify-content: space-around; padding-bottom: 20px; border-left: 1px solid rgba(255,255,255,0.06);">
+          <div style="display:flex; flex-direction:column; align-items:center;">
+            <div id="bar-organic" style="width: 24px; height: 160px; background: linear-gradient(to top, var(--cyan), var(--purple)); border-radius: 6px; transition: height 0.4s ease;"></div>
+            <span style="font-size: 0.75rem; color: var(--text-muted); margin-top: 8px;">Organic</span>
+          </div>
+          <div style="display:flex; flex-direction:column; align-items:center;">
+            <div id="bar-referral" style="width: 24px; height: 80px; background: linear-gradient(to top, var(--cyan), var(--purple)); border-radius: 6px; transition: height 0.4s ease;"></div>
+            <span style="font-size: 0.75rem; color: var(--text-muted); margin-top: 8px;">Direct</span>
+          </div>
+          <div style="display:flex; flex-direction:column; align-items:center;">
+            <div id="bar-social" style="width: 24px; height: 110px; background: linear-gradient(to top, var(--cyan), var(--purple)); border-radius: 6px; transition: height 0.4s ease;"></div>
+            <span style="font-size: 0.75rem; color: var(--text-muted); margin-top: 8px;">Social</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 2: AI Product Recommendations -->
+  <section id="recommendations" class="section-container">
+    <div class="section-header">
+      <h2>AI Recommendations Engine</h2>
+      <p>Tailored solution blueprints and product configurations matching customer criteria in real time.</p>
+    </div>
+
+    <div class="glass-card">
+      <div class="rec-controls">
+        <div class="persona-tabs">
+          <button class="persona-tab active" onclick="selectPersona('dev', this)">💻 Developer</button>
+          <button class="persona-tab" onclick="selectPersona('creative', this)">🎨 Creator</button>
+          <button class="persona-tab" onclick="selectPersona('marketer', this)">📈 Marketer</button>
+          <button class="persona-tab" onclick="selectPersona('business', this)">🚀 Founder</button>
+        </div>
+        <div class="search-input-group">
+          <input type="text" class="input-text" id="rec-search" placeholder="Describe your stack requirements...">
+          <button class="btn btn-primary" onclick="triggerRecommendationAnalysis()" style="padding: 10px 20px;">
+            <i class="fa-solid fa-wand-magic-sparkles"></i> Recommend
+          </button>
+        </div>
+      </div>
+
+      <div class="rec-showcase">
+        <div class="rec-scan-line" id="rec-scan"></div>
+        <div class="rec-grid" id="rec-grid">
+          <!-- Card 1 -->
+          <div class="rec-card">
+            <span class="match-badge">99.2% MATCH</span>
+            <h4 style="font-size: 1.15rem; margin-bottom: 8px;">Serverless Compute Core</h4>
+            <p style="color: var(--text-muted); font-size: 0.85rem; line-height: 1.6; margin-bottom: 16px;">Scale from zero to millions of active tasks instantly. Optimized latency configurations.</p>
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-top:auto;">
+              <span style="font-weight:700; color:white;">$0.0002 / run</span>
+              <a href="#" class="nav-cta" style="padding:6px 12px; font-size:0.8rem;">Add</a>
+            </div>
+          </div>
+          <!-- Card 2 -->
+          <div class="rec-card">
+            <span class="match-badge">97.8% MATCH</span>
+            <h4 style="font-size: 1.15rem; margin-bottom: 8px;">Edge Telemetry Agent</h4>
+            <p style="color: var(--text-muted); font-size: 0.85rem; line-height: 1.6; margin-bottom: 16px;">Real-time logs collection and automated filtering directly at the edge locations.</p>
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-top:auto;">
+              <span style="font-weight:700; color:white;">$19 / mo</span>
+              <a href="#" class="nav-cta" style="padding:6px 12px; font-size:0.8rem;">Add</a>
+            </div>
+          </div>
+          <!-- Card 3 -->
+          <div class="rec-card">
+            <span class="match-badge">95.4% MATCH</span>
+            <h4 style="font-size: 1.15rem; margin-bottom: 8px;">CognitiveDB Graph</h4>
+            <p style="color: var(--text-muted); font-size: 0.85rem; line-height: 1.6; margin-bottom: 16px;">Graph database for neural-network relationships with microsecond query times.</p>
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-top:auto;">
+              <span style="font-weight:700; color:white;">$49 / mo</span>
+              <a href="#" class="nav-cta" style="padding:6px 12px; font-size:0.8rem;">Add</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 3: Digital Business Management Console -->
+  <section id="management" class="section-container">
+    <div class="section-header">
+      <h2>Digital Business Console</h2>
+      <p>Manage product inventories, operations statuses, and review live workflow hooks outputs.</p>
+    </div>
+
+    <div class="management-panel">
+      <!-- Left: Products List -->
+      <div class="glass-card">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 24px;">
+          <h3 style="font-family: 'Space Grotesk', sans-serif; font-size: 1.25rem;">Active Inventory</h3>
+          <button class="btn btn-primary" onclick="toggleModal(true)" style="padding: 8px 16px; font-size: 0.85rem; border-radius: 8px;">
+            <i class="fa-solid fa-plus"></i> Add Product
+          </button>
+        </div>
+        <div class="table-container">
+          <table class="custom-table">
+            <thead>
+              <tr>
+                <th>Product Name</th>
+                <th>SKU</th>
+                <th>Price</th>
+                <th>Status</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="inventory-tbody">
+              <tr>
+                <td style="font-weight:600;">Cognitive Flow Pro</td>
+                <td style="font-family:monospace;">CF-PRO-01</td>
+                <td>$99.00</td>
+                <td><span class="status-dot status-active"></span>Active</td>
+                <td><button class="btn btn-secondary" onclick="simulateRestock(this)" style="padding: 4px 10px; font-size: 0.75rem; border-radius: 4px;">Restock</button></td>
+              </tr>
+              <tr>
+                <td style="font-weight:600;">Serverless API Agent</td>
+                <td style="font-family:monospace;">API-AGT-02</td>
+                <td>$29.00</td>
+                <td><span class="status-dot status-active"></span>Active</td>
+                <td><button class="btn btn-secondary" onclick="simulateRestock(this)" style="padding: 4px 10px; font-size: 0.75rem; border-radius: 4px;">Restock</button></td>
+              </tr>
+              <tr>
+                <td style="font-weight:600;">Edge CDN Connector</td>
+                <td style="font-family:monospace;">EDG-CDN-03</td>
+                <td>$15.00</td>
+                <td><span class="status-dot status-low"></span>Low Stock</td>
+                <td><button class="btn btn-secondary" onclick="simulateRestock(this)" style="padding: 4px 10px; font-size: 0.75rem; border-radius: 4px; color: var(--orange); border-color: rgba(245,158,11,0.2);">Restock</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Right: Real-time logs -->
+      <div class="log-panel">
+        <h3 style="font-family: 'Space Grotesk', sans-serif; font-size: 1.2rem; margin-bottom: 16px; text-align: left;">Live Operations Feed</h3>
+        <div class="log-feed" id="log-feed">
+          <div class="log-item"><span class="log-time">[15:32:00]</span> Operations pipeline initialized.</div>
+          <div class="log-item"><span class="log-time">[15:32:05]</span> Analytics data synchronizing...</div>
+          <div class="log-item"><span class="log-time">[15:32:06]</span> Active database clusters status: 100% OK</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Add Product Modal Overlay -->
+  <div class="modal-overlay" id="product-modal" onclick="if(event.target===this) toggleModal(false)">
+    <div class="glass-card modal-box">
+      <h3 style="font-family: 'Space Grotesk', sans-serif; font-size: 1.4rem; margin-bottom: 24px; text-align: left;">Add New Product</h3>
+      <form onsubmit="addNewProduct(event)">
+        <div class="form-group">
+          <label for="p-name">Product Name</label>
+          <input type="text" id="p-name" class="input-text" style="width:100%" placeholder="e.g. AuthSecure Shield" required>
+        </div>
+        <div class="form-group">
+          <label for="p-sku">SKU Code</label>
+          <input type="text" id="p-sku" class="input-text" style="width:100%" placeholder="e.g. AUTH-SEC-09" required>
+        </div>
+        <div class="form-group">
+          <label for="p-price">Price ($)</label>
+          <input type="number" step="0.01" id="p-price" class="input-text" style="width:100%" placeholder="e.g. 49.00" required>
+        </div>
+        <div style="display:flex; gap:12px; justify-content:flex-end; margin-top:24px;">
+          <button type="button" class="btn btn-secondary" onclick="toggleModal(false)" style="padding:10px 20px;">Cancel</button>
+          <button type="submit" class="btn btn-primary" style="padding:10px 20px;">Add Item</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Section 4: Automated Workflows Builder -->
+  <section id="workflows" class="section-container">
+    <div class="section-header">
+      <h2>Automated Workflows</h2>
+      <p>Design and visually check automation sequences linking events, branches, and outcomes.</p>
+    </div>
+
+    <div class="glass-card" style="position:relative;">
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 32px;">
+        <h3 style="font-family: 'Space Grotesk', sans-serif; font-size: 1.25rem; text-align: left;">Visual Pipeline Canvas</h3>
+        <div style="display:flex; gap:12px;">
+          <button class="btn btn-secondary" onclick="addNewWorkflowStep()" style="padding: 8px 16px; font-size: 0.85rem; border-radius: 8px;">
+            <i class="fa-solid fa-plus-circle"></i> Add custom node
+          </button>
+          <button class="btn btn-primary" onclick="simulateWorkflowTrigger()" style="padding: 8px 16px; font-size: 0.85rem; border-radius: 8px;">
+            <i class="fa-solid fa-play"></i> Test Workflow
+          </button>
+        </div>
+      </div>
+
+      <div class="workflow-canvas" id="workflow-canvas-container">
+        <!-- Connections SVG -->
+        <svg class="workflow-connections" width="100%" height="100%">
+          <path d="M 230 190 H 330" stroke="rgba(255,255,255,0.08)" stroke-width="3" fill="none" id="line-1"></path>
+          <path d="M 550 190 H 650" stroke="rgba(255,255,255,0.08)" stroke-width="3" fill="none" id="line-2"></path>
+          <path d="M 870 190 H 970" stroke="rgba(255,255,255,0.08)" stroke-width="3" fill="none" id="line-3"></path>
+        </svg>
+
+        <div class="workflow-pulse-dot" id="pulse-dot"></div>
+
+        <!-- Node 1 -->
+        <div class="node-card" id="node-1">
+          <div class="node-icon" style="background: rgba(139, 92, 246, 0.15); color: var(--purple);">
+            <i class="fa-solid fa-bolt"></i>
+          </div>
+          <div class="node-header">Stripe Webhook</div>
+          <div class="node-body">Trigger: Order Placed</div>
+        </div>
+
+        <!-- Node 2 -->
+        <div class="node-card" id="node-2">
+          <div class="node-icon" style="background: rgba(6, 182, 212, 0.15); color: var(--cyan);">
+            <i class="fa-solid fa-filter"></i>
+          </div>
+          <div class="node-header">Rule Engine</div>
+          <div class="node-body">Condition: Price > $50</div>
+        </div>
+
+        <!-- Node 3 -->
+        <div class="node-card" id="node-3">
+          <div class="node-icon" style="background: rgba(236, 72, 153, 0.15); color: var(--pink);">
+            <i class="fa-solid fa-paper-plane"></i>
+          </div>
+          <div class="node-header">CRM Dispatcher</div>
+          <div class="node-body">Action: Sync Profile</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 5: Customer Portal -->
+  <section id="portal" class="section-container">
+    <div class="section-header">
+      <h2>Secure Customer Portal</h2>
+      <p>Secure client-facing space to check past order states, profile settings, and manage API integrations.</p>
+    </div>
+
+    <div class="glass-card portal-container">
+      <div class="portal-menu">
+        <button class="portal-menu-btn active" onclick="switchPortalTab('tracking', this)">
+          <i class="fa-solid fa-truck"></i> Order Tracker
+        </button>
+        <button class="portal-menu-btn" onclick="switchPortalTab('apikeys', this)">
+          <i class="fa-solid fa-key"></i> Developer Keys
+        </button>
+        <button class="portal-menu-btn" onclick="switchPortalTab('profile', this)">
+          <i class="fa-solid fa-user-gear"></i> Account Settings
+        </button>
+      </div>
+
+      <div class="portal-content">
+        <!-- Tab 1: Order Tracker -->
+        <div class="portal-content-pane active" id="portal-tab-tracking">
+          <h3 style="font-family: 'Space Grotesk', sans-serif; font-size: 1.3rem; margin-bottom: 24px;">Shipment Tracking</h3>
+          
+          <div class="stepper">
+            <div class="stepper-progress" id="step-prog-bar"></div>
+            <div class="step completed" id="step-0">
+              <div class="step-circle"><i class="fa-solid fa-receipt"></i></div>
+              <div class="step-label">Created</div>
+            </div>
+            <div class="step active" id="step-1">
+              <div class="step-circle"><i class="fa-solid fa-gears"></i></div>
+              <div class="step-label">Processing</div>
+            </div>
+            <div class="step" id="step-2">
+              <div class="step-circle"><i class="fa-solid fa-truck-ramp-box"></i></div>
+              <div class="step-label">Shipped</div>
+            </div>
+            <div class="step" id="step-3">
+              <div class="step-circle"><i class="fa-solid fa-house-chimney-user"></i></div>
+              <div class="step-label">Delivered</div>
+            </div>
+          </div>
+
+          <div style="display:flex; justify-content:space-between; align-items:center; background:rgba(255,255,255,0.02); padding: 20px; border-radius:12px; border:1px solid var(--glass-border);">
+            <div>
+              <h4 style="font-size:0.95rem; font-weight:700;">Order ID: #WF-2026-98A</h4>
+              <p style="font-size: 0.8rem; color:var(--text-muted); margin-top: 4px;">Tracking: USPS Priority #9205590111244</p>
+            </div>
+            <button class="btn btn-primary" onclick="advanceShipmentState()" style="padding: 10px 18px; font-size: 0.85rem; border-radius: 8px;">
+              Advance State
+            </button>
+          </div>
+        </div>
+
+        <!-- Tab 2: API Keys -->
+        <div class="portal-content-pane" id="portal-tab-apikeys">
+          <h3 style="font-family: 'Space Grotesk', sans-serif; font-size: 1.3rem; margin-bottom: 8px;">Developer Credentials</h3>
+          <p style="color:var(--text-muted); font-size: 0.85rem; margin-bottom: 24px;">Use API credentials to integrate CognitiveFlow automation actions into exterior webhooks endpoints.</p>
+          
+          <div style="text-align:left;">
+            <label style="font-size:0.75rem; font-weight:700; color:var(--text-muted); text-transform:uppercase;">API Secret Key</label>
+            <div class="api-key-box">
+              <span class="api-key-text" id="api-key-value">mock_sk_51Nc9FpL23K9G874XzP1m9K087Fp41NzLp</span>
+              <div style="display:flex; gap:12px;">
+                <button class="btn-icon" onclick="toggleApiKeyReveal()" title="Toggle Reveal"><i class="fa-solid fa-eye" id="eye-icon"></i></button>
+                <button class="btn-icon" onclick="copyApiKey()" title="Copy to Clipboard"><i class="fa-solid fa-copy"></i></button>
+              </div>
+            </div>
+            <button class="btn btn-secondary" onclick="regenerateApiKey()" style="margin-top: 16px; padding: 8px 16px; font-size: 0.8rem; border-radius: 6px;">
+              Regenerate credentials
+            </button>
+          </div>
+        </div>
+
+        <!-- Tab 3: Account Profile Settings -->
+        <div class="portal-content-pane" id="portal-tab-profile">
+          <h3 style="font-family: 'Space Grotesk', sans-serif; font-size: 1.3rem; margin-bottom: 24px;">Profile Configurations</h3>
+          
+          <div style="display:flex; gap:24px; align-items:center; margin-bottom:24px;">
+            <div id="user-avatar" style="width: 80px; height: 80px; border-radius: 50%; background: linear-gradient(135deg, var(--purple), var(--cyan)); display:flex; align-items:center; justify-content:center; font-size: 2.2rem; font-weight:700; color:white; border: 2px solid var(--glass-border);">
+              JD
+            </div>
+            <div>
+              <h4 style="font-size:1.1rem; font-weight:700; color:white;" id="username-display">John Doe</h4>
+              <p style="font-size: 0.8rem; color:var(--text-muted);">Role: Account Owner • Enterprise Tier</p>
+            </div>
+          </div>
+
+          <form onsubmit="event.preventDefault(); saveProfileSettings();">
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:16px;">
+              <div class="form-group">
+                <label>Full Name</label>
+                <input type="text" class="input-text" id="prof-name" value="John Doe" style="width:100%">
+              </div>
+              <div class="form-group">
+                <label>Billing Email</label>
+                <input type="email" class="input-text" value="john.doe@enterprise.com" style="width:100%">
+              </div>
+            </div>
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+              <div>
+                <label style="font-size:0.8rem; color:var(--text-muted); display:flex; align-items:center; gap:8px;">
+                  Avatar color: 
+                  <input type="color" onchange="changeAvatarColor(this.value)" value="#8b5cf6" style="border:none; cursor:pointer; width:24px; height:24px; border-radius:4px;">
+                </label>
+              </div>
+              <button type="submit" class="btn btn-primary" style="padding: 10px 20px; font-size:0.85rem;">Save Changes</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Support Widget UI -->
+  <div class="support-widget">
+    <button class="support-trigger" onclick="toggleSupportChat()">
+      <i class="fa-solid fa-comment-dots" id="support-trigger-icon"></i>
+      <span class="support-status"></span>
+    </button>
+
+    <div class="support-chat-box glass-card" id="chat-box">
+      <!-- Chat Header -->
+      <div class="chat-header">
+        <div class="chat-avatar">🤖</div>
+        <div class="chat-title">
+          <h4>Cognitive AI Assistant</h4>
+          <span><i class="fa-solid fa-circle" style="font-size:0.5rem;"></i> Active now</span>
+        </div>
+      </div>
+      
+      <!-- Chat Messages log -->
+      <div class="chat-messages" id="chat-messages-container">
+        <div class="message message-bot">
+          Hi! I am your AI Operations assistant. I can help you test workflows, search recommendations, inspect analytics, or track shipments. What can I do for you today?
+        </div>
+      </div>
+
+      <!-- Quick Replies -->
+      <div class="chat-quick-replies">
+        <button class="chat-reply-chip" onclick="submitQuickReply('How do I run a workflow simulation?')">Run Workflow</button>
+        <button class="chat-reply-chip" onclick="submitQuickReply('Show me analytics info')">Get Analytics</button>
+        <button class="chat-reply-chip" onclick="submitQuickReply('How to generate API credentials?')">API Access</button>
+      </div>
+
+      <!-- Text Inputs group -->
+      <div class="chat-input-group">
+        <input type="text" class="input-text" id="chat-input" placeholder="Type a message..." onkeydown="if(event.key==='Enter') sendChatMessage()">
+        <button class="btn btn-primary" onclick="sendChatMessage()" style="padding: 10px 14px; border-radius:10px;">
+          <i class="fa-solid fa-paper-plane"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Script logics -->
+  <script>
+    // Highlight Active Navbar Items based on scroll
+    const navItems = document.querySelectorAll('.nav-item');
+    window.addEventListener('scroll', () => {
+      let current = '';
+      const sections = document.querySelectorAll('section');
+      sections.forEach(sec => {
+        const top = sec.offsetTop - 120;
+        if (window.scrollY >= top) {
+          current = sec.getAttribute('id');
+        }
+      });
+      navItems.forEach(item => {
+        item.classList.remove('active');
+        if (item.getAttribute('href').slice(1) === current) {
+          item.classList.add('active');
+        }
+      });
+    });
+
+    // Logger Utility
+    const feed = document.getElementById('log-feed');
+    function logEvent(text) {
+      const now = new Date();
+      const timeStr = '[' + now.toTimeString().split(' ')[0] + ']';
+      const div = document.createElement('div');
+      div.className = 'log-item';
+      div.innerHTML = '<span class="log-time">' + timeStr + '</span> ' + text;
+      feed.appendChild(div);
+      feed.scrollTop = feed.scrollHeight;
+    }
+
+    // Feature 1: Charts & Analytics update
+    let chartPeriod = '24h';
+    function updateChart() {
+      const select = document.getElementById('timeframe');
+      chartPeriod = select.value;
+      
+      const linePath = document.getElementById('chart-line-path');
+      const strokePath = document.getElementById('chart-stroke-path');
+      
+      // Update line path coordinates based on range choice
+      if (chartPeriod === '24h') {
+        linePath.setAttribute('d', 'M 0,200 Q 100,120 200,150 T 400,80 T 600,120 L 600,240 L 0,240 Z');
+        strokePath.setAttribute('d', 'M 0,200 Q 100,120 200,150 T 400,80 T 600,120');
+        document.getElementById('bar-organic').style.height = '160px';
+        document.getElementById('bar-referral').style.height = '80px';
+        document.getElementById('bar-social').style.height = '110px';
+      } else if (chartPeriod === '7d') {
+        linePath.setAttribute('d', 'M 0,160 Q 120,60 220,180 T 440,110 T 600,60 L 600,240 L 0,240 Z');
+        strokePath.setAttribute('d', 'M 0,160 Q 120,60 220,180 T 440,110 T 600,60');
+        document.getElementById('bar-organic').style.height = '120px';
+        document.getElementById('bar-referral').style.height = '150px';
+        document.getElementById('bar-social').style.height = '90px';
+      } else {
+        linePath.setAttribute('d', 'M 0,100 Q 80,180 200,90 T 380,140 T 600,70 L 600,240 L 0,240 Z');
+        strokePath.setAttribute('d', 'M 0,100 Q 80,180 200,90 T 380,140 T 600,70');
+        document.getElementById('bar-organic').style.height = '90px';
+        document.getElementById('bar-referral').style.height = '110px';
+        document.getElementById('bar-social').style.height = '170px';
+      }
+      logEvent('Analytics chart range changed to: ' + chartPeriod);
+    }
+
+    let revenueVal = 128492;
+    let salesCount = 4892;
+    function simulateNewSale() {
+      revenueVal += Math.floor(Math.random() * 400) + 100;
+      salesCount += 1;
+      
+      document.getElementById('kpi-rev').innerText = '$' + revenueVal.toLocaleString();
+      document.getElementById('kpi-users').innerText = salesCount.toLocaleString();
+      
+      logEvent('New order payment settled successfully! Total revenue: $' + revenueVal.toLocaleString());
+      
+      // Bump conversion rate slightly
+      const rate = (3.2 + (Math.random() * 0.2)).toFixed(1);
+      document.getElementById('kpi-conv').innerText = rate + '%';
+    }
+
+    // Feature 2: AI Recommendations persona select
+    function selectPersona(personaId, element) {
+      document.querySelectorAll('.persona-tab').forEach(t => t.classList.remove('active'));
+      element.classList.add('active');
+      triggerRecommendationAnalysis();
+    }
+
+    // Recommendations Engine recalc
+    function triggerRecommendationAnalysis() {
+      const scanner = document.getElementById('rec-scan');
+      const grid = document.getElementById('rec-grid');
+      
+      scanner.style.opacity = '1';
+      scanner.style.top = '0%';
+      grid.style.opacity = '0.3';
+      
+      let pos = 0;
+      const id = setInterval(() => {
+        if (pos >= 100) {
+          clearInterval(id);
+          scanner.style.opacity = '0';
+          grid.style.opacity = '1';
+          loadNewRecommendations();
+        } else {
+          pos += 3;
+          scanner.style.top = pos + '%';
+        }
+      }, 15);
+    }
+
+    const mockProductsPool = [
+      { name: "AuthSecure Shield", desc: "Enterprise-grade authorization and authentication adapter configured for federated login.", price: "$39/mo", rate: "99.1% MATCH" },
+      { name: "Node Telemetry Broker", desc: "Data streaming and mapping middleware with automated queue balancing.", price: "$29/mo", rate: "98.4% MATCH" },
+      { name: "Cognitive Vector Search", desc: "Semantic retrieval vector database supporting 1536-dimensional embeddings.", price: "$89/mo", rate: "96.5% MATCH" },
+      { name: "Media Assets Optimizer", desc: "Real-time images compression, conversion and edge delivery proxy.", price: "$12/mo", rate: "95.1% MATCH" },
+      { name: "Serverless Cache Node", desc: "Low latency key-value store cache network deployable in 30+ regions.", price: "$8/mo", rate: "93.2% MATCH" }
+    ];
+
+    function loadNewRecommendations() {
+      const activePersonaText = document.querySelector('.persona-tab.active').innerText;
+      logEvent('AI Product recommendations recalculated for category: ' + activePersonaText);
+      
+      const shuffled = [...mockProductsPool].sort(() => 0.5 - Math.random()).slice(0, 3);
+      const grid = document.getElementById('rec-grid');
+      grid.innerHTML = '';
+      
+      shuffled.forEach(item => {
+        grid.innerHTML += '<div class="rec-card animate-fade">' +
+            '<span class="match-badge">' + item.rate + '</span>' +
+            '<h4 style="font-size: 1.15rem; margin-bottom: 8px;">' + item.name + '</h4>' +
+            '<p style="color: var(--text-muted); font-size: 0.85rem; line-height: 1.6; margin-bottom: 16px;">' + item.desc + '</p>' +
+            '<div style="display:flex; justify-content:space-between; align-items:center; margin-top:auto;">' +
+              '<span style="font-weight:700; color:white;">' + item.price + '</span>' +
+              '<a href="#" class="nav-cta" style="padding:6px 12px; font-size:0.8rem;">Add</a>' +
+            '</div>' +
+          '</div>';
+      });
+    }
+
+    // Feature 3: Business management operations
+    function toggleModal(show) {
+      document.getElementById('product-modal').classList.toggle('open', show);
+    }
+
+    function addNewProduct(e) {
+      e.preventDefault();
+      const name = document.getElementById('p-name').value;
+      const sku = document.getElementById('p-sku').value;
+      const price = parseFloat(document.getElementById('p-price').value).toFixed(2);
+      
+      const tbody = document.getElementById('inventory-tbody');
+      const tr = document.createElement('tr');
+      tr.style.opacity = '0';
+      tr.style.transform = 'translateY(10px)';
+      tr.style.transition = 'all 0.3s';
+      tr.innerHTML = '<td style="font-weight:600;">' + name + '</td>' +
+        '<td style="font-family:monospace;">' + sku + '</td>' +
+        '<td>$' + price + '</td>' +
+        '<td><span class="status-dot status-active"></span>Active</td>' +
+        '<td><button class="btn btn-secondary" onclick="simulateRestock(this)" style="padding: 4px 10px; font-size: 0.75rem; border-radius: 4px;">Restock</button></td>';
+      tbody.appendChild(tr);
+      
+      setTimeout(() => {
+        tr.style.opacity = '1';
+        tr.style.transform = 'translateY(0)';
+      }, 50);
+
+      toggleModal(false);
+      logEvent('New inventory item added: ' + name + ' (SKU: ' + sku + ')');
+      
+      document.getElementById('p-name').value = '';
+      document.getElementById('p-sku').value = '';
+      document.getElementById('p-price').value = '';
+    }
+
+    function simulateRestock(btn) {
+      const tr = btn.closest('tr');
+      const name = tr.querySelector('td').innerText;
+      const statusCell = tr.querySelectorAll('td')[3];
+      statusCell.innerHTML = '<span class="status-dot status-active"></span>Active';
+      btn.style.color = 'var(--text-light)';
+      btn.style.borderColor = 'var(--glass-border)';
+      
+      logEvent('Restocked item: ' + name + ' (Replenished warehouse levels to 100%)');
+      alert('Inventory levels replenished for: ' + name);
+    }
+
+    // Feature 4: Workflows simulation trigger
+    function simulateWorkflowTrigger() {
+      const dot = document.getElementById('pulse-dot');
+      const node1 = document.getElementById('node-1');
+      const node2 = document.getElementById('node-2');
+      const node3 = document.getElementById('node-3');
+
+      document.querySelectorAll('.node-card').forEach(n => {
+        n.classList.remove('active-node', 'success-node');
+      });
+      
+      logEvent('Workflow pipeline triggered by mock Stripe Webhook.');
+      node1.classList.add('active-node');
+      
+      dot.style.opacity = '1';
+      dot.style.left = '150px';
+      dot.style.top = '185px';
+      
+      setTimeout(() => {
+        dot.style.left = '450px';
+        node1.classList.remove('active-node');
+        node1.classList.add('success-node');
+        node2.classList.add('active-node');
+        logEvent('Workflow step 1 complete: Webhook verified.');
+      }, 1000);
+      
+      setTimeout(() => {
+        dot.style.left = '750px';
+        node2.classList.remove('active-node');
+        node2.classList.add('success-node');
+        node3.classList.add('active-node');
+        logEvent('Workflow step 2 complete: Applied conditional branching router.');
+      }, 2000);
+
+      setTimeout(() => {
+        dot.style.left = '1000px';
+        dot.style.opacity = '0';
+        node3.classList.remove('active-node');
+        node3.classList.add('success-node');
+        logEvent('Workflow automation completed successfully. CRM updated.');
+        alert('Automation workflow executed with success!');
+      }, 3000);
+    }
+
+    function addNewWorkflowStep() {
+      const name = prompt("Enter workflow step name (e.g. Slack Dispatch, SMTP Mailer):", "Mailer Node");
+      if(!name) return;
+      
+      const container = document.getElementById('workflow-canvas-container');
+      const node = document.createElement('div');
+      node.className = 'node-card animate-fade';
+      node.id = 'node-' + (document.querySelectorAll('.node-card').length + 1);
+      
+      node.innerHTML = '<div class="node-icon" style="background: rgba(16, 185, 129, 0.15); color: var(--green);">' +
+          '<i class="fa-solid fa-server"></i>' +
+        '</div>' +
+        '<div class="node-header">' + name + '</div>' +
+        '<div class="node-body">Action: Custom Webhook</div>';
+      
+      const svg = container.querySelector('svg');
+      const startX = 230 + (220 * (document.querySelectorAll('.node-card').length - 1));
+      const endX = startX + 100;
+      
+      svg.innerHTML += '<path d="M ' + startX + ' 190 H ' + endX + '" stroke="rgba(255,255,255,0.08)" stroke-width="3" fill="none"></path>';
+      container.appendChild(node);
+      logEvent('Added custom workflow node block: ' + name);
+    }
+
+    // Feature 5: Customer portal tabs and simulation stepper
+    function switchPortalTab(tabName, btn) {
+      document.querySelectorAll('.portal-menu-btn').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.portal-content-pane').forEach(p => p.classList.remove('active'));
+      
+      btn.classList.add('active');
+      document.getElementById('portal-tab-' + tabName).classList.add('active');
+      logEvent('Switched Customer Portal view to: ' + tabName);
+    }
+
+    let currentShipmentStep = 1;
+    function advanceShipmentState() {
+      if (currentShipmentStep >= 3) {
+        currentShipmentStep = 0;
+        document.querySelectorAll('.step').forEach((s, idx) => {
+          s.className = idx === 0 ? 'step completed' : idx === 1 ? 'step active' : 'step';
+        });
+        document.getElementById('step-prog-bar').style.width = '0%';
+        logEvent('Portal tracking state reset to order created.');
+        return;
+      }
+      
+      const prevStep = document.getElementById('step-' + currentShipmentStep);
+      prevStep.className = 'step completed';
+      currentShipmentStep++;
+      
+      const activeStep = document.getElementById('step-' + currentShipmentStep);
+      activeStep.className = 'step active';
+      
+      const progWidth = (currentShipmentStep / 3) * 100;
+      document.getElementById('step-prog-bar').style.width = progWidth + '%';
+      
+      const labels = ["Created", "Processing", "Shipped", "Delivered"];
+      logEvent('Client order tracking state updated: ' + labels[currentShipmentStep]);
+    }
+
+    let keysRevealed = false;
+    function toggleApiKeyReveal() {
+      keysRevealed = !keysRevealed;
+      const keySpan = document.getElementById('api-key-value');
+      const eyeIcon = document.getElementById('eye-icon');
+      
+      if (keysRevealed) {
+        keySpan.classList.add('revealed');
+        eyeIcon.className = 'fa-solid fa-eye-slash';
+      } else {
+        keySpan.classList.remove('revealed');
+        eyeIcon.className = 'fa-solid fa-eye';
+      }
+    }
+
+    function copyApiKey() {
+      const key = document.getElementById('api-key-value').innerText;
+      navigator.clipboard.writeText(key);
+      alert('API credentials copied to clipboard!');
+      logEvent('API key copied to clipboard.');
+    }
+
+    function regenerateApiKey() {
+      const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+      let key = "mock_sk_";
+      for (let i = 0; i < 32; i++) {
+        key += chars.charAt(Math.floor(Math.random() * chars.length));
+      }
+      document.getElementById('api-key-value').innerText = key;
+      logEvent('Client generated new API credential key.');
+      alert('New API secret key generated successfully.');
+    }
+
+    function changeAvatarColor(val) {
+      document.getElementById('user-avatar').style.background = val;
+    }
+
+    function saveProfileSettings() {
+      const name = document.getElementById('prof-name').value;
+      document.getElementById('username-display').innerText = name;
+      document.getElementById('user-avatar').innerText = name.split(' ').map(n=>n[0]).join('');
+      alert('Profile configurations saved successfully!');
+      logEvent('Account Profile name updated to: ' + name);
+    }
+
+    // Feature 6: Support Widget operations
+    let chatOpen = false;
+    function toggleSupportChat() {
+      chatOpen = !chatOpen;
+      const box = document.getElementById('chat-box');
+      const triggerIcon = document.getElementById('support-trigger-icon');
+      
+      box.classList.toggle('open', chatOpen);
+      triggerIcon.className = chatOpen ? 'fa-solid fa-xmark' : 'fa-solid fa-comment-dots';
+      
+      if(chatOpen) {
+        const input = document.getElementById('chat-input');
+        setTimeout(() => input.focus(), 150);
+      }
+    }
+
+    function sendChatMessage() {
+      const input = document.getElementById('chat-input');
+      const text = input.value.trim();
+      if (!text) return;
+      
+      appendMessage(text, 'user');
+      input.value = '';
+      showTypingIndicator(true);
+      
+      setTimeout(() => {
+        showTypingIndicator(false);
+        const reply = getAIResponse(text);
+        appendMessage(reply, 'bot');
+      }, 1000);
+    }
+
+    function submitQuickReply(text) {
+      appendMessage(text, 'user');
+      showTypingIndicator(true);
+      
+      setTimeout(() => {
+        showTypingIndicator(false);
+        const reply = getAIResponse(text);
+        appendMessage(reply, 'bot');
+      }, 1000);
+    }
+
+    function appendMessage(text, sender) {
+      const chatContainer = document.getElementById('chat-messages-container');
+      const msg = document.createElement('div');
+      msg.className = 'message message-' + sender;
+      msg.innerText = text;
+      
+      const ind = document.getElementById('typing-indicator');
+      if (ind) {
+        chatContainer.insertBefore(msg, ind);
+      } else {
+        chatContainer.appendChild(msg);
+      }
+      chatContainer.scrollTop = chatContainer.scrollHeight;
+    }
+
+    function showTypingIndicator(show) {
+      const chatContainer = document.getElementById('chat-messages-container');
+      const existing = document.getElementById('typing-indicator');
+      
+      if (show && !existing) {
+        const div = document.createElement('div');
+        div.id = 'typing-indicator';
+        div.className = 'message message-bot chat-typing-dots';
+        div.innerHTML = '<div class="typing-dot"></div>' +
+          '<div class="typing-dot"></div>' +
+          '<div class="typing-dot"></div>';
+        chatContainer.appendChild(div);
+        chatContainer.scrollTop = chatContainer.scrollHeight;
+      } else if (!show && existing) {
+        existing.remove();
+      }
+    }
+
+    function getAIResponse(query) {
+      const q = query.toLowerCase();
+      if (q.includes('workflow') || q.includes('run')) {
+        return "You can trigger and check workflows in the 'Automated Workflows' block. Click 'Test Workflow' to see node traversal pulses.";
+      }
+      if (q.includes('analytics') || q.includes('stat') || q.includes('traffic')) {
+        return "The Analytics dashboard compiles organic, direct, and social metrics. Toggle between 24h, 7d, and 30d views via the dropdown filters.";
+      }
+      if (q.includes('api') || q.includes('credential') || q.includes('key')) {
+        return "Credentials are located under Customer Portal -> Developer Keys. Copy your key, and you can regenerate it securely if needed.";
+      }
+      if (q.includes('pricing') || q.includes('price')) {
+        return "CognitiveFlow is free to start. Developer features start at $29/mo, and Enterprise instances start at $99/mo.";
+      }
+      if (q.includes('hello') || q.includes('hi')) {
+        return "Hello! I am your operational co-pilot. I can answer questions about recommendations, orders, analytics, or workflow setups.";
+      }
+      return "Interesting question! For custom pipelines configurations, please contact support at support@cognitiveflow.ai.";
+    }
+  </script>
+</body>
+</html>`,
+  }
+];
 export function getTemplateById(id: string): WebsiteTemplate | undefined {
   return templates.find((t) => t.id === id);
 }

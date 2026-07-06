@@ -20,6 +20,12 @@ const styles = [
 const sectionOptions = [
   { id: 'hero', label: 'Hero Section', icon: '🏠' },
   { id: 'features', label: 'Features', icon: '⭐' },
+  { id: 'ai-support', label: 'AI Customer Support', icon: '🤖' },
+  { id: 'product-recommendations', label: 'AI Recommendations', icon: '🛍️' },
+  { id: 'business-management', label: 'Business Dashboard', icon: '🏢' },
+  { id: 'analytics-dashboard', label: 'Analytics Dashboard', icon: '📈' },
+  { id: 'customer-portal', label: 'Customer Portal', icon: '👤' },
+  { id: 'automated-workflows', label: 'Automated Workflows', icon: '⚙️' },
   { id: 'pricing', label: 'Pricing', icon: '💰' },
   { id: 'testimonials', label: 'Testimonials', icon: '💬' },
   { id: 'contact', label: 'Contact Form', icon: '📧' },
@@ -100,7 +106,13 @@ export default function GeneratePage() {
     // Simulate generation delay
     setTimeout(() => {
       let mockHtml = templates[0].html; // default SaaS Pro
-      if (selectedStyle === '3d' || selectedStyle === 'glassmorphism') {
+      const hasAdvancedSections = selectedSections.some(s => 
+        ['ai-support', 'product-recommendations', 'business-management', 'analytics-dashboard', 'customer-portal', 'automated-workflows'].includes(s)
+      );
+
+      if (hasAdvancedSections) {
+        mockHtml = templates.find(t => t.id === 'ai-business-suite')?.html || templates[0].html;
+      } else if (selectedStyle === '3d' || selectedStyle === 'glassmorphism') {
         mockHtml = templates.find(t => t.id === 'portfolio-3d-glass')?.html || templates[1].html;
       } else if (selectedStyle === 'minimal') {
         mockHtml = templates[1].html; // Creative Portfolio

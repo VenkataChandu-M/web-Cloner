@@ -95,6 +95,18 @@ export const SECTION_PROMPTS: Record<string, string> = {
 
   features: 'Include a features section with: a grid of 6 feature cards (icon + title + desc), each card has hover lift animation. Cards should stagger-animate in on scroll. Use colorful icon backgrounds (small rounded squares with gradient). Section header with badge chip.',
 
+  'ai-support': 'Include an AI Customer Support chat widget. It should feature a floating toggle button in the bottom right corner with a typing status bubble, and a fully functional interactive slide-up glass chat portal. The chatbot should use client-side JavaScript to mock an intelligent assistant that replies automatically to user input with a typing delay and pre-defined quick-reply chips.',
+
+  'product-recommendations': 'Include an AI Product Recommendations section. It must contain tabs for target customer personas (e.g. Developer, Designer, Marketer, Founder) and a search box. Clicking tags or searching triggers a visual scan overlay animation and updates the layout with recommended items, ratings, and AI-match percentages dynamically.',
+
+  'business-management': 'Include a Digital Business Management Dashboard interface. It should display a grid of active product listings, a stock inventory tracking table, and a live log activity feed. Provide an interactive "Add Product" modal form and "Restock" button that update lists in real time using client-side JavaScript state.',
+
+  'analytics-dashboard': 'Include an Analytics Dashboard containing KPI summary cards (Total Revenue, Conversion Rate, Session Length) and beautiful interactive SVG charts (a curved traffic line graph and a conversion channels bar graph). Include range filter dropdowns (24h, 7d, 30d) that trigger SVG path morphing animations and CSS height shifts to reflect data updates.',
+
+  'customer-portal': 'Include a Customer Portal panel with client options (Account details, Track Orders, Developer API keys). Features a visual shipment timeline stepper (Created -> Processing -> Shipped -> Delivered) that updates when simulating status transitions, and a blur/unblur toggle for developer API credential copying.',
+
+  'automated-workflows': 'Include an Automated Workflows builder canvas. It displays connected visual cards representing Trigger, Filter, and Action logic nodes on a grid background. Provide a "Test Workflow" button that runs an animated laser particle trace along connection lines, lighting up active cards sequentially.',
+
   pricing: 'Include a pricing section with 3 plan cards (Basic/Pro/Enterprise). The middle "Pro" card should be highlighted with gradient border and "Most Popular" badge. Each card has a price with animated currency + number, feature list with checkmarks, and a CTA button. Toggle switch for monthly/annual billing.',
 
   testimonials: 'Include a testimonials carousel: auto-sliding cards (every 4s, pause on hover) with customer photo placeholder (colored avatar with initials), star rating, quote text, name, title, company. Include prev/next arrow buttons and dot indicators.',
